@@ -27,7 +27,7 @@ public class ChatRoom {
 
 
     @Builder
-    public ChatRoom(String roomId, int pr_id, int pr_state, String sellerId, String buyerId, Timestamp createdDate, String sellerName, String buyerName, String pr_title, Set<WebSocketSession> sessions) {
+    public ChatRoom(String roomId, int pr_id, int pr_state, String sellerId, String buyerId, Timestamp createdDate, String sellerName, String buyerName, String pr_title ) {
         this.roomId = roomId;
         this.pr_id = pr_id;
         this.pr_state = pr_state;
@@ -37,7 +37,6 @@ public class ChatRoom {
         this.sellerName = sellerName;
         this.buyerName = buyerName;
         this.pr_title = pr_title;
-        this.sessions = sessions;
     }
 
 
