@@ -1,0 +1,18 @@
+package com.daangn.daangn.connnection;
+
+import com.daangn.daangn.connection.DBConnectionUtil;
+import java.sql.Connection;
+import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+@Slf4j
+public class DBConnectionUtilTest {
+
+	@Test
+	void connection() {
+		Connection connection = DBConnectionUtil.getConnection();
+		Assertions.assertThat(connection).isNotNull();
+	}
+
+}
