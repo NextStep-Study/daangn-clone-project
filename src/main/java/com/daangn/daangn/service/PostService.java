@@ -1,4 +1,10 @@
 package com.daangn.daangn.service;
 
-public class PostService {
+import com.daangn.daangn.domain.Post;
+
+import java.util.List;
+
+public interface PostService {
+    public Post  save(Post post) throws Exception;
+    public List<Post> findAll() throws Exception;
 }
