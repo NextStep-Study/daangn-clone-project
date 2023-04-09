@@ -6,9 +6,9 @@ import lombok.Data;
 
 import java.sql.Timestamp;
 
-@Data
+//@Data
 // Getter, Setter, RequiredArgsConstructor, ToString을 한번에 설정해준다.
-@Builder
+//@Builder
 // 순서를 정해주는 객체 패턴
 public class ChatDTO {
     // 사용자가 입장, 퇴장 할 때에 대한 메시지와

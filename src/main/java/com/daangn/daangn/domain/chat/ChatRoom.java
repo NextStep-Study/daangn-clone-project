@@ -18,7 +18,7 @@ import java.util.Set;
 @Setter
 @ToString
 @Entity
-@Table(name = "post")
+@Table(name = "chatroom")
 public class ChatRoom {
     @Id
     @GeneratedValue
@@ -32,7 +32,4 @@ public class ChatRoom {
     private String buyerName; // 구매자 닉네임
     //not in DB
     private String pr_title;
-
-    // 사용자가 누군지 확인을 해야한다. --> session을 이용한다.
-    private Set<WebSocketSession> sessions = new HashSet<>();
 }
