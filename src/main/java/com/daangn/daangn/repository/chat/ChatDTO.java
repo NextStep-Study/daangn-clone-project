@@ -1,4 +1,4 @@
-package com.daangn.chat.danngn.model.dto;
+package com.daangn.daangn.repository.chat;
 
 
 import lombok.Builder;
@@ -21,5 +21,5 @@ public class ChatDTO {
     private String roomId; // 방 번호
     private String sender; // 채팅을 보낸 사람
     private String message; // 메시지
-    private Timestamp time; // 채팅 발송 시간
+    private String time; // 채팅 발송 시간
 }

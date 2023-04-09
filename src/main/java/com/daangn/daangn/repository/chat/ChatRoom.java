@@ -1,11 +1,10 @@
-package com.daangn.chat.danngn.model.dto;
+package com.daangn.daangn.repository.chat;
 
-import com.daangn.chat.daanggn.service.ChatService;
+import com.daangn.daangn.service.chat.ChatService;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.web.socket.WebSocketSession;
 
-import java.security.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +15,7 @@ public class ChatRoom {
     private int pr_state; // 판매 상태 id
     private String sellerId; // 판매자 아이디
     private String buyerId; // 구매자 아이디
-    private Timestamp createdDate; // 채팅방 생성 시간
+    private String createdDate; // 채팅방 생성 시간
     private String sellerName; // 판매자 닉네임
     private String buyerName; // 구매자 닉네임
     //not in DB
@@ -27,7 +26,7 @@ public class ChatRoom {
 
 
     @Builder
-    public ChatRoom(String roomId, int pr_id, int pr_state, String sellerId, String buyerId, Timestamp createdDate, String sellerName, String buyerName, String pr_title, Set<WebSocketSession> sessions) {
+    public ChatRoom(String roomId, int pr_id, int pr_state, String sellerId, String buyerId, String createdDate, String sellerName, String buyerName, String pr_title, Set<WebSocketSession> sessions) {
         this.roomId = roomId;
         this.pr_id = pr_id;
         this.pr_state = pr_state;

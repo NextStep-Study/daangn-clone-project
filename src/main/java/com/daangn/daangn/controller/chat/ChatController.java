@@ -1,7 +1,7 @@
-package com.daangn.chat.daangn.controller;
+package com.daangn.daangn.controller.chat;
 
-import com.daangn.chat.daanggn.service.ChatService;
-import com.daangn.chat.danngn.model.dto.ChatRoom;
+import com.daangn.daangn.service.chat.ChatService;
+import com.daangn.daangn.repository.chat.ChatRoom;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

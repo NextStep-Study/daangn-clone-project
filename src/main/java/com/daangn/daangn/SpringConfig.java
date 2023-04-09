@@ -1,4 +1,4 @@
-package com.daangn.chat;
+package com.daangn.daangn;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +15,6 @@ public class SpringConfig implements WebSocketConfigurer {
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         // endpoint 설정 : /daangn/chat
         // 이를 통해서 daangn://localhost:8080/ws/chat 으로 요청이 들어오면 websocket 통신을 진행한다.
-        registry.addHandler(webSocketHandler, "/daangn/chat").setAllowedOrigins("*");
+//        registry.addHandler(webSocketHandler, "/daangn/chat").setAllowedOrigins("*");
     }
 }
