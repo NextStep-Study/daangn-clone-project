@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @Setter
 public class Board {
 
+
+
     @Id
     @GeneratedValue
     private Long id;
