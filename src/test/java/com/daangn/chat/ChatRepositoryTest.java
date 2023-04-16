@@ -25,7 +25,7 @@ public class ChatRepositoryTest {
     @Transactional
     @Rollback(false)
     public void test() throws Exception {
-        //given
+        //give
         Chat chat = new Chat();
         chat.setMessage("Hi");
 
