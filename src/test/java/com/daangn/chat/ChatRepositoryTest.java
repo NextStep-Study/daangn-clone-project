@@ -30,7 +30,7 @@ public class ChatRepositoryTest {
         chat.setMessage("Hi");
 
         //when
-        Long savedId = chatRepository.save(chat).getRoomId();
+        Long savedId = chatRepository.save(chat).getId();
         Optional<Chat> findChat = chatRepository.findById(savedId);
 
         //then
