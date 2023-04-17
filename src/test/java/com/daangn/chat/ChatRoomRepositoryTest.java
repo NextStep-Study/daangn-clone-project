@@ -1,8 +1,7 @@
 package com.daangn.chat;
 
-import com.daangn.daangn.domain.chat.Chat;
 import com.daangn.daangn.domain.chat.ChatRoom;
-import com.daangn.daangn.repository.chat.ChatRoomRepository;
+import com.daangn.daangn.domain.chat.ChatRoomRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

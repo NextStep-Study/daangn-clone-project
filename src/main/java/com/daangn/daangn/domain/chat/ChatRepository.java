@@ -1,4 +1,4 @@
-package com.daangn.daangn.repository.chat;
+package com.daangn.daangn.domain.chat;
 
 import com.daangn.daangn.domain.chat.Chat;
 import org.springframework.data.jpa.repository.JpaRepository;

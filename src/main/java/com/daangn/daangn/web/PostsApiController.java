@@ -1,8 +1,8 @@
 package com.daangn.daangn.web;
 
 import com.daangn.daangn.service.posts.PostsService;
-import com.daangn.daangn.web.dto.PostsSaveRequestDto;
-import com.daangn.daangn.web.dto.PostsUpdateRequestDto;
+import com.daangn.daangn.web.dto.posts.PostsSaveRequestDto;
+import com.daangn.daangn.web.dto.posts.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

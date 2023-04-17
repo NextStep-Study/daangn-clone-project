@@ -2,7 +2,7 @@ package com.daangn.chat;
 
 
 import com.daangn.daangn.domain.chat.Chat;
-import com.daangn.daangn.repository.chat.ChatRepository;
+import com.daangn.daangn.domain.chat.ChatRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.daangn.daangn.web.dto;
+package com.daangn.daangn.web.dto.posts;
 
 import com.daangn.daangn.domain.posts.Posts;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.daangn.daangn.controller.chat;
+package com.daangn.daangn.web;
 
 import com.daangn.daangn.service.chat.ChatService;
 import com.daangn.daangn.repository.chat.ChatRoom;

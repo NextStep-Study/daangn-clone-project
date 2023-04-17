@@ -1,7 +1,7 @@
 package com.daangn.member;
 
 import com.daangn.daangn.domain.Member.Member;
-import com.daangn.daangn.repository.member.MemberRepository;
+import com.daangn.daangn.domain.Member.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
