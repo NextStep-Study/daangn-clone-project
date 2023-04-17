@@ -1,6 +1,6 @@
 package com.daangn.daangn.connnection;
 
-import com.daangn.daangn.connection.DBConnectionUtil;
+import com.daangn.daangn.utils.connection.DBConnectionUtil;
 import java.sql.Connection;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;

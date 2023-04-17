@@ -2,9 +2,9 @@ package com.daangn.daangn.service.posts;
 
 import com.daangn.daangn.domain.posts.Posts;
 import com.daangn.daangn.domain.posts.PostsRepository;
-import com.daangn.daangn.web.dto.PostsResponseDto;
-import com.daangn.daangn.web.dto.PostsSaveRequestDto;
-import com.daangn.daangn.web.dto.PostsUpdateRequestDto;
+import com.daangn.daangn.web.dto.posts.PostsResponseDto;
+import com.daangn.daangn.web.dto.posts.PostsSaveRequestDto;
+import com.daangn.daangn.web.dto.posts.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

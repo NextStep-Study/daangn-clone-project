@@ -1,4 +1,4 @@
-package com.daangn.daangn.repository.member;
+package com.daangn.daangn.domain.Member;
 
 import com.daangn.daangn.domain.Member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;

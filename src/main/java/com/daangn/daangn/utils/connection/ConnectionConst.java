@@ -1,4 +1,4 @@
-package com.daangn.daangn.connection;
+package com.daangn.daangn.utils.connection;
 
 public abstract class ConnectionConst {
 	public static final String URL = "jdbc:h2:tcp://localhost/~/test";
