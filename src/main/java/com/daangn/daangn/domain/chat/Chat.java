@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -22,12 +19,19 @@ public class Chat {
     public enum MessageType{
         ENTER, OUT ,TALK
     }
-
     private ChatDTO.MessageType type; // 메세지 타입
     @Id
     @GeneratedValue
-    private Long roomId; // 방 번호
+    private Long id;
+
+    //연관 관계에 있는 Entity 들 모두 가져온다 → Eager 전략
+    //연관 관계에 있는 Entity 가져오지 않고, getter 로 접근할 때 가져온다 → Lazy 전략
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name ="chatroom_id")
+    private ChatRoom room; // 방 번호
     private String sender; // 채팅을 보낸 사람
     private String message; // 메시지
     private String time; // 채팅 발송 시간
+
+    // 회원 entity를 받아와서 get으로 값을 가져올거라 예상
 }

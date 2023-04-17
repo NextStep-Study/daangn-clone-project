@@ -1,14 +1,12 @@
-package jpabook.jpashop.domain;
+package com.daangn.daangn.domain.Member;
 
 public class Address {
 
-    private String city; //do, µµ
+    private String city; //do, ï¿½ï¿½
     private String si;
     private String code;
     
-    
-    //getter seterr »ý¼º? SPRINGÀº ¾î¶°ÇÑ°¡
-   
+
     protected Address() {
     }
     

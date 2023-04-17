@@ -4,7 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import lombok.AllArgsConstructor;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +18,10 @@ public class Photo {
 	@GeneratedValue
 	@Column(name = "photo_id")
 	private Long id; //사진 ID
-	private Long productId; //상품 ID
+
+	@ManyToOne
+	@JoinColumn(name = "product_id")
+	private Product product; //상품 ID
 	private String src; //사진이 존재하는 위치
 
 }

@@ -5,10 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.web.socket.WebSocketSession;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.security.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +19,8 @@ import java.util.Set;
 public class ChatRoom {
     @Id
     @GeneratedValue
-    private Long roomId; // 채팅방 아이디
+    @Column(name = "chatroom_id")
+    private Long Id; // 채팅방 아이디
     private int pr_id; // 물품 id
     private int pr_state; // 판매 상태 id
     private String sellerId; // 판매자 아이디
@@ -32,4 +30,8 @@ public class ChatRoom {
     private String buyerName; // 구매자 닉네임
     //not in DB
     private String pr_title;
+
+    // 영속성 설정
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "room", cascade = CascadeType.REMOVE)
+    private final Set<Chat> chat = new HashSet<>();
 }
