@@ -2,6 +2,7 @@ package com.daangn.daangn.domain.chat;
 
 import com.daangn.daangn.repository.chat.ChatDTO;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
