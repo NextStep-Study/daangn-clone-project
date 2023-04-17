@@ -1,8 +1,7 @@
 package com.daangn.daangn.domain.chat;
 
-import com.daangn.daangn.repository.chat.ChatDTO;
+
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -19,7 +18,7 @@ public class Chat {
     public enum MessageType{
         ENTER, OUT ,TALK
     }
-    private ChatDTO.MessageType type; // 메세지 타입
+
     @Id
     @GeneratedValue
     private Long id;

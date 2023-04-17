@@ -18,8 +18,6 @@ import java.util.Optional;
 @SpringBootTest
 @WebAppConfiguration
 public class ChatRepositoryTest {
-
-
     @Autowired
     ChatRepository chatRepository;
     @Test

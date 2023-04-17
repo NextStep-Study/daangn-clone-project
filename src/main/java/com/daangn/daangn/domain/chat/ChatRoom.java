@@ -3,10 +3,9 @@ package com.daangn.daangn.domain.chat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.web.socket.WebSocketSession;
+
 
 import javax.persistence.*;
-import java.security.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
