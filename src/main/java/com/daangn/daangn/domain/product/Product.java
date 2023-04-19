@@ -46,4 +46,10 @@ public class Product {
 
 	private Integer writerId; //작성자 ID
 
+	//==연관관계 메소드==//
+	public void addPhoto(Photo photo) {
+		photoList.add(photo);
+		photo.setProduct(this);
+	}
+
 }
