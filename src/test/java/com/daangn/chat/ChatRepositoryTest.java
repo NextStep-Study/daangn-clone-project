@@ -1,6 +1,7 @@
 package com.daangn.chat;
 
 
+
 import com.daangn.daangn.domain.chat.Chat;
 import com.daangn.daangn.domain.chat.ChatRepository;
 import org.assertj.core.api.Assertions;

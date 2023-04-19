@@ -1,27 +1,25 @@
 package com.daangn.daangn.domain.chat;
 
-import com.daangn.daangn.repository.chat.ChatDTO;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import com.daangn.daangn.domain.chat.types.ChatType;
+import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
-@Setter
+@Builder
 @ToString
 @Table(name = "chat")
 @Entity
 public class Chat {
     // 사용자가 입장, 퇴장 할 때에 대한 메시지와
     // 사용자 끼리 대화하는 TALK 두 가지로 메시지 타입을 나눈다.
-    public enum MessageType{
-        ENTER, OUT ,TALK
-    }
-    private ChatDTO.MessageType type; // 메세지 타입
+
+    @Enumerated(EnumType.STRING)
+    private ChatType type; // 메세지 타입
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "chat_id")
     private Long id;
 
     //연관 관계에 있는 Entity 들 모두 가져온다 → Eager 전략
@@ -29,9 +27,12 @@ public class Chat {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="chatroom_id")
     private ChatRoom room; // 방 번호
-    private String sender; // 채팅을 보낸 사람
-    private String message; // 메시지
-    private String time; // 채팅 발송 시간
+    private String content; // 내용
 
-    // 회원 entity를 받아와서 get으로 값을 가져올거라 예상
+    @ManyToOne(fetch = FetchType.LAZY)
+    // 방 개설시 방장의 이메일
+    @JoinColumn(name = "user_id")
+    private User user;
+    private LocalDateTime send_time;// 발송시간
+
 }
