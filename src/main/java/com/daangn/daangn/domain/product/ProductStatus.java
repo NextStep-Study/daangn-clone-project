@@ -1,4 +1,4 @@
-package com.daangn.daangn.domain.Product;
+package com.daangn.daangn.domain.product;
 
 public enum ProductStatus {
 	ONSALE, RESERVED, OUTOFSTOCK, HIDDEN

@@ -1,11 +1,12 @@
 package com.daangn.daangn.domain.Member;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /*
 id [자신이 설정하는 닉네임 개념]
@@ -38,16 +39,16 @@ public class Member {
 	private String name;
 	private String birth;
 	private String phone_num;
-    @Id
-    @GeneratedValue
+	@Id
+	@GeneratedValue
 
-    private Long id;
-    private String email;
-    private String pwd;
-    private int reg_num; //DB�� �ڵ����� �ο��ϴ� ���� ��ȣ
-    private int reg_date;
+	private Long id;
+	private String email;
+	private String pwd;
+	private int reg_num; //DB�� �ڵ����� �ο��ϴ� ���� ��ȣ
+	private int reg_date;
 
-    private Address address;
+	private Address address;
     
     /*
  	위에 처럼 Adress 클래스를 따로 뺄까 아니면 아래 처럼 한번에 선언할지 ,,
@@ -55,6 +56,5 @@ public class Member {
  	private String street;
  	private String zipcode;
      */
-
 
 }
