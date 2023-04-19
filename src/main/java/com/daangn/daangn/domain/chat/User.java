@@ -24,7 +24,7 @@ public class User {
     @JoinColumn(name = "user_email")
     private Member member;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "member",cascade = CascadeType.REMOVE)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user",cascade = CascadeType.REMOVE)
     private final Set<Chat> message = new HashSet<>();
 
     @Builder

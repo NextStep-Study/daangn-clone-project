@@ -2,10 +2,8 @@ package com.daangn.daangn.domain.Member;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 /*
 id [자신이 설정하는 닉네임 개념]
@@ -40,6 +38,7 @@ public class Member {
 	private String phone_num;
     @Id
     @GeneratedValue
+    @Column(name = "member_id")
 
     private Long id;
     private String email;

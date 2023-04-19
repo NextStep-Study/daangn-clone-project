@@ -28,8 +28,10 @@ public class ChatRepositoryTest {
     @Rollback(false)
     public void test() throws Exception {
         //give
-        Chat chat = new Chat();
-        chat.setMessage("Hi");
+        String content = "test입니다.";
+
+        Chat chat = Chat.builder().
+                    content(content).build();
 
         //when
         Long savedId = chatRepository.save(chat).getId();
