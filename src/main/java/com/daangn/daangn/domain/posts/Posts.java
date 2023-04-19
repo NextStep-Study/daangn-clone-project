@@ -13,6 +13,7 @@ public class Posts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_incremnent
+    @Column(name = "post_id")
     private Long id;
 
     @Column(length = 500, nullable = false)
@@ -22,7 +23,6 @@ public class Posts {
     private String content;
 
     private String author;
-
 
     @Builder
     public Posts(String title, String content, String author) {

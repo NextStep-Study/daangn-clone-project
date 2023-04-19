@@ -1,6 +1,7 @@
 package com.daangn.daangn.web;
 
 import com.daangn.daangn.service.posts.PostsService;
+import com.daangn.daangn.web.dto.posts.PostsResponseDto;
 import com.daangn.daangn.web.dto.posts.PostsSaveRequestDto;
 import com.daangn.daangn.web.dto.posts.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,17 @@ public class PostsApiController {
     @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
+    }
+
+    @GetMapping("/api/v1/posts/{id}")
+    public PostsResponseDto findById(@PathVariable Long id){
+        return postsService.findById(id);
+    }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id){
+        postsService.delete(id);
+        return id;
     }
 
 }
