@@ -1,7 +1,8 @@
-package com.daangn.daangn.domain.Product;
+package com.daangn.daangn.domain.product;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -19,7 +20,7 @@ public class Photo {
 	@Column(name = "photo_id")
 	private Long id; //사진 ID
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id")
 	private Product product; //상품 ID
 	private String src; //사진이 존재하는 위치

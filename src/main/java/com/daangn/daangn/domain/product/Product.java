@@ -1,4 +1,4 @@
-package com.daangn.daangn.domain.Product;
+package com.daangn.daangn.domain.product;
 
 import java.time.LocalDateTime;
 import java.util.List;
