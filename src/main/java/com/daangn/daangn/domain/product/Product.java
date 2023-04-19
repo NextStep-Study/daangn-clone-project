@@ -1,4 +1,4 @@
-package com.daangn.daangn.domain.Product;
+package com.daangn.daangn.domain.product;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -45,5 +45,11 @@ public class Product {
 	private Category category; //카테고리 ID
 
 	private Integer writerId; //작성자 ID
+
+	//==연관관계 메소드==//
+	public void addPhoto(Photo photo) {
+		photoList.add(photo);
+		photo.setProduct(this);
+	}
 
 }

@@ -6,6 +6,10 @@ import com.daangn.daangn.domain.chat.types.ChatRoomType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 
 import javax.persistence.*;
 import java.util.HashSet;
