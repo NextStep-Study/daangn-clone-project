@@ -1,14 +1,11 @@
 package com.daangn.daangn.domain.chat;
 
-<<<<<<< HEAD
 import com.daangn.daangn.domain.chat.types.ChatType;
 import lombok.*;
-=======
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
->>>>>>> dev
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -21,16 +18,11 @@ import java.time.LocalDateTime;
 public class Chat {
     // 사용자가 입장, 퇴장 할 때에 대한 메시지와
     // 사용자 끼리 대화하는 TALK 두 가지로 메시지 타입을 나눈다.
-<<<<<<< HEAD
-
     @Enumerated(EnumType.STRING)
     private ChatType type; // 메세지 타입
-=======
     public enum MessageType{
         ENTER, OUT ,TALK
     }
-
->>>>>>> dev
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "chat_id")
