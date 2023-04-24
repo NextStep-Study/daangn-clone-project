@@ -44,7 +44,7 @@ public class Member {
     private Long id;
     private String email;
     private String pwd;
-    private int reg_num; //DB�� �ڵ����� �ο��ϴ� ���� ��ȣ
+    private int reg_num;
     private int reg_date;
 
     private Address address;
