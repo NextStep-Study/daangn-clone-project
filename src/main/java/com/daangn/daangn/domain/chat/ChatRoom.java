@@ -1,15 +1,12 @@
 package com.daangn.daangn.domain.chat;
 
 import com.daangn.daangn.domain.Member.Member;
-import com.daangn.daangn.domain.Product.Product;
+
 import com.daangn.daangn.domain.chat.types.ChatRoomType;
+import com.daangn.daangn.domain.product.Product;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -51,6 +48,7 @@ public class ChatRoom {
         this.product = product;
         this.type = type;
     }
+
     // 물건의 이름을 가져온다.
     public String getTitle(){
         return product.getTitle();
