@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+import static com.daangn.daangn.domain.chat.types.ChatRoomType.CARROT;
+
 public class ChatRoomRepositoryTest {
 
     @Autowired
@@ -19,8 +21,9 @@ public class ChatRoomRepositoryTest {
     @Rollback(false)
     public void test() throws Exception {
         //given
-        ChatRoom chatRoom = new ChatRoom();
-        chatRoom.setPr_title("신발");
+        ChatRoom chatRoom = ChatRoom.builder()
+                .type(CARROT)
+                .build();
 
         //when
         Long savedId = chatRoomRepository.save(chatRoom).getId();

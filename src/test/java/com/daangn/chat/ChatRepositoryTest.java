@@ -1,6 +1,7 @@
 package com.daangn.chat;
 
 
+
 import com.daangn.daangn.domain.chat.Chat;
 import com.daangn.daangn.domain.chat.ChatRepository;
 import org.assertj.core.api.Assertions;
@@ -25,8 +26,10 @@ public class ChatRepositoryTest {
     @Rollback(false)
     public void test() throws Exception {
         //give
-        Chat chat = new Chat();
-        chat.setMessage("Hi");
+        String content = "test입니다.";
+
+        Chat chat = Chat.builder().
+                    content(content).build();
 
         //when
         Long savedId = chatRepository.save(chat).getId();
