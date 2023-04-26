@@ -41,21 +41,12 @@ import lombok.ToString;
 @Entity
 public class Member {
 
-	private String name;
-	private String birth;
-	private String phone_num;
-
-<<<<<<< HEAD
-    private Long id;
-    private String email;
-    private String pwd;
-    private int reg_num;
-    private int reg_date;
-=======
 	@Id
 	@GeneratedValue
 	@Column(name = "member_id")
 	private Long id;
+
+	private String name;
 
 	private String email;
 
@@ -66,14 +57,7 @@ public class Member {
 	private int reg_date;
 
 	private Address address;
->>>>>>> fec5da97c2e26ce9ab94046ae86310845d513410
 
-    /*
- 	위에 처럼 Adress 클래스를 따로 뺄까 아니면 아래 처럼 한번에 선언할지 ,,
- 	private String city;
- 	private String street;
- 	private String zipcode;
-    */
 
 	@OneToMany(mappedBy = "product")
 	List<Product> allUploadedProducts = new ArrayList<>();

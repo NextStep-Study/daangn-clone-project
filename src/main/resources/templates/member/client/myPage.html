@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>마이 페이지</h2>
+    </div>
+
+    <hr class="my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>이룸</th>
+                <th>지역</th>
+                <th>등등</th>
+            </tr>
+            </thead>
+            <tbody>
+           <!-- <tr th:each="item : ${items}">
+                <td><a href="item.html" th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">회원 ID</a></td>
+                <td><a href="item.html" th:href="@{|/basic/items/${item.id}|}"
+                       th:text="${item.itemName}">상품명</a></td>
+                <td th:text="${item.price}">상품 가격</td>
+                <td th:text="${item.quantity}">수량</td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

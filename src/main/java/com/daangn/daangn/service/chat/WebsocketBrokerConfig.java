@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 @EnableWebSocketMessageBroker
 public class WebsocketBrokerConfig implements WebSocketMessageBrokerConfigurer {
 
-    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(WebsocketBrokerConfig.class);
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
