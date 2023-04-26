@@ -22,21 +22,21 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'com.h2database:h2'
-    testImplementation 'junit:junit:4.13.1'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.projectlombok:lombok:1.18.22'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.webjars:sockjs-client:1.5.1' // sockjs
+    implementation 'org.webjars:stomp-websocket:2.3.4' // stomp
+    implementation 'com.google.code.gson:gson:2.9.0' // gson
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
-	// sockjs
-    implementation 'org.webjars:sockjs-client:1.5.1'
-	// stomp
-    implementation 'org.webjars:stomp-websocket:2.3.4'
-	// gson
-    implementation 'com.google.code.gson:gson:2.9.0'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    compileOnly 'org.projectlombok:lombok'
+
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'org.projectlombok:lombok:1.18.22'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
