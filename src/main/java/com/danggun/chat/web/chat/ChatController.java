@@ -17,11 +17,14 @@ public class ChatController {
 
     @MessageMapping("/chat/message")
     public void enter(Chat chat) {
-        log.debug("here");
+        log.debug("hereiam");
+        System.out.println("testsetset");
       if (chat.getType().equals(ChatType.ENTER)) {
-            chat.builder().content(chat.getContent()+"님이 입장하였습니다");
+            chat.builder().message(chat.getMessage()+"님이 입장하였습니다");
+
         }
-        sendingOperations.convertAndSend("/topic/chat/room/"+chat.getRoom(),chat);
+
+        sendingOperations.convertAndSend("/topic/chat/room/"+chat.getRoomId(),chat);
     }
 }
 

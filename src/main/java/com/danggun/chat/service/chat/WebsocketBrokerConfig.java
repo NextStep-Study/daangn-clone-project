@@ -29,9 +29,9 @@ public class WebsocketBrokerConfig implements WebSocketMessageBrokerConfigurer {
 
         // stomp 접속 주소 url => /broadcast
         registry.addEndpoint("/chat/chat")// 연결될 엔드포인트
-                .withSockJS() // SoketJS를 연결한다는 설정
+                .setAllowedOriginPatterns("*")
+                .withSockJS();// SoketJS를 연결한다는 설정
                 // STOMP에서 TCP 연결이 잘 되어있는지 체킹하는 것, HTTP header를 통해 연결 상태를 주기적으로 확인한다.
-                .setHeartbeatTime(60_000);
     }
 
 }

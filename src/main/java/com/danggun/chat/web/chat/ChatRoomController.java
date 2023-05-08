@@ -39,7 +39,7 @@ public class ChatRoomController {
     // 채팅방 입장 화면
     @GetMapping("/room/enter/{roomId}/{sender}" )
     public String roomDetail(Model model, @PathVariable String roomId, @PathVariable String sender) {
-        System.out.println(roomId);
+        log.debug("roomId : "+ roomId);
         model.addAttribute("roomId", roomId);
         model.addAttribute("sender", sender);
 

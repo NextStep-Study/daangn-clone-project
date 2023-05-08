@@ -28,20 +28,22 @@ public class Chat {
     //연관 관계에 있는 Entity 가져오지 않고, getter 로 접근할 때 가져온다 → Lazy 전략
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="chatroom_id")
-    private ChatRoom room; // 방 번호
-    private String content; // 내용
-
+    private ChatRoom room; // 방 정보
+    private String message; // 내용
     private String sender;
+
+    private String roomId;
     private LocalDateTime send_time;// 발송시간
 
 
     @Builder
-    public Chat(ChatType type, Long id, ChatRoom room, String content, String sender, LocalDateTime send_time) {
+    public Chat(ChatType type, Long id, ChatRoom room, String message, String sender, String roomId, LocalDateTime send_time) {
         this.type = type;
         this.id = id;
         this.room = room;
-        this.content = content;
+        this.message = message;
         this.sender = sender;
+        this.roomId = roomId;
         this.send_time = send_time;
     }
 }
