@@ -21,18 +21,13 @@ password [회원 가입 시 설정, 로그인 시 권한 부여 여부를 결정
  */
 
 import com.daangn.daangn.domain.product.Product;
-import com.daangn.daangn.domain.review.Review;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -41,24 +36,24 @@ import lombok.ToString;
 @Entity
 public class Member {
 
-	private String name;
-	private String birth;
-	private String phone_num;
+    private String name;
+    private String birth;
+    private String phone_num;
 
-	@Id
-	@GeneratedValue
-	@Column(name = "member_id")
-	private Long id;
+    @Id
+    @GeneratedValue
+    @Column(name = "member_id")
+    private Long id;
 
-	private String email;
+    private String email;
 
-	private String pwd;
+    private String pwd;
 
-	private int reg_num;
+    private int reg_num;
 
-	private int reg_date;
+    private int reg_date;
 
-	private Address address;
+    private Address address;
 
     /*
  	위에 처럼 Adress 클래스를 따로 뺄까 아니면 아래 처럼 한번에 선언할지 ,,
@@ -67,13 +62,7 @@ public class Member {
  	private String zipcode;
     */
 
-	@OneToMany(mappedBy = "product")
-	List<Product> allUploadedProducts = new ArrayList<>();
-
-	@OneToMany(mappedBy = "review")
-	List<Review> sentReviews = new ArrayList<>();
-
-	@OneToMany(mappedBy = "review")
-	List<Review> receivedReviews = new ArrayList<>();
-
+    @OneToMany(mappedBy = "product")
+    List<Product> uploadedProducts = new ArrayList<>();
+	
 }
