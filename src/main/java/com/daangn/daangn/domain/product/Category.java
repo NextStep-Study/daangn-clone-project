@@ -1,24 +1,24 @@
 package com.daangn.daangn.domain.product;
 
 public enum Category {
-	DIGITALDEVICE,
-	HOMEAPPLIANCE,
-	FURNITURE,
-	KITCHEN,
-	KIDS,
-	KIDSBOOK,
-	WCLOTHES,
-	WSTUFF,
-	MFASHION,
-	BEAUTY,
-	SPORTS,
-	HOBBY,
-	CAR,
-	BOOK,
-	TICKET,
-	FOODS,
-	PET,
-	PLANT,
-	ETC
+    DIGITAL_DEVICE,
+    HOME_APPLIANCE,
+    FURNITURE,
+    KITCHEN,
+    KIDS,
+    KIDS_BOOK,
+    W_CLOTHES,
+    W_STUFF,
+    M_FASHION,
+    BEAUTY,
+    SPORTS,
+    HOBBY,
+    CAR,
+    BOOK,
+    TICKET,
+    FOODS,
+    PET,
+    PLANT,
+    ETC
 
 }
