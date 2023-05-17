@@ -1,9 +1,8 @@
 package com.daangn.chat;
 
 
-
-import com.daangn.daangn.domain.chat.Chat;
-import com.daangn.daangn.domain.chat.ChatRepository;
+import com.daangn.daangn.chat.entity.Chat;
+import com.daangn.daangn.chat.repository.ChatRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -15,12 +14,14 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @WebAppConfiguration
 public class ChatRepositoryTest {
     @Autowired
     ChatRepository chatRepository;
+
     @Test
     @Transactional
     @Rollback(false)
@@ -29,7 +30,7 @@ public class ChatRepositoryTest {
         String content = "test입니다.";
 
         Chat chat = Chat.builder().
-                    content(content).build();
+                content(content).build();
 
         //when
         Long savedId = chatRepository.save(chat).getId();

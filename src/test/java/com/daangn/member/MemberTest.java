@@ -1,7 +1,7 @@
 package com.daangn.member;
 
-import com.daangn.daangn.domain.Member.Member;
-import com.daangn.daangn.domain.Member.MemberRepository;
+import com.daangn.daangn.member.repository.MemberRepository;
+import com.daangn.daangn.temp.domain.Member.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +13,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.transaction.Transactional;
 import java.util.Optional;
-
 
 
 @RunWith(SpringRunner.class)
@@ -29,7 +28,7 @@ public class MemberTest {
     @Transactional
     @Rollback(false)
 
-    public void test() throws Exception{
+    public void test() throws Exception {
         //give
         Member member = new Member();
         member.setId(123L); //long 타입 int 형 뒤에 L 붙이기
@@ -44,7 +43,6 @@ public class MemberTest {
         Assertions.assertThat(findMember).isEqualTo(member);
 
     }
-
 
 
 }

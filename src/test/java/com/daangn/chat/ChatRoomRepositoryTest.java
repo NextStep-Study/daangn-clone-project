@@ -1,7 +1,7 @@
 package com.daangn.chat;
 
-import com.daangn.daangn.domain.chat.ChatRoom;
-import com.daangn.daangn.domain.chat.ChatRoomRepository;
+import com.daangn.daangn.chat.entity.ChatRoom;
+import com.daangn.daangn.chat.repository.ChatRoomRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-import static com.daangn.daangn.domain.chat.types.ChatRoomType.CARROT;
+import static com.daangn.daangn.temp.domain.chat.types.ChatRoomType.CARROT;
 
 public class ChatRoomRepositoryTest {
 
     @Autowired
     ChatRoomRepository chatRoomRepository;
+
     @Test
     @Transactional
     @Rollback(false)
