@@ -1,8 +1,20 @@
 package com.daangn.daangn.domain.product;
 
+import com.daangn.daangn.domain.Member.Member;
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +23,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="product")
 public class Product {
 
 	@Id
@@ -40,7 +51,9 @@ public class Product {
 	@Enumerated(EnumType.STRING)
 	private Category category; //카테고리 ID
 
-	private Integer writerId; //작성자 ID
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "member_id")
+	private Member member; //작성자
 
 	//==연관관계 메소드==//
 	public void addPhoto(Photo photo) {

@@ -1,6 +1,6 @@
 package com.daangn.daangn.service.chat;
 
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -12,6 +12,9 @@ import java.util.logging.Logger;
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebsocketBrokerConfig implements WebSocketMessageBrokerConfigurer {
+
+
+    //private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(WebsocketBrokerConfig.class);
 
 
     @Override

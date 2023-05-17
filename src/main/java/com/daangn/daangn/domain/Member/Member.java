@@ -37,7 +37,6 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Table(name = "member")
 @Entity
 public class Member {
 
@@ -59,13 +58,13 @@ public class Member {
 	private Address address;
 
 
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "member")
 	List<Product> allUploadedProducts = new ArrayList<>();
 
-	@OneToMany(mappedBy = "review")
+	@OneToMany(mappedBy = "writer")
 	List<Review> sentReviews = new ArrayList<>();
 
-	@OneToMany(mappedBy = "review")
-	List<Review> receivedReviews = new ArrayList<>();
+//	@OneToMany(mappedBy = "target")
+//	List<Review> receivedReviews = new ArrayList<>();
 
 }

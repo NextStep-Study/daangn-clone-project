@@ -13,8 +13,6 @@ import org.hibernate.annotations.CreationTimestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="review")
-
 public class Review {
 
 	@Id
@@ -26,9 +24,9 @@ public class Review {
 	@JoinColumn(name = "member_id")
 	private Member writer;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "member_id")
-	private Member target;
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "member_id")
+//	private Member target;
 
 	private String content;
 

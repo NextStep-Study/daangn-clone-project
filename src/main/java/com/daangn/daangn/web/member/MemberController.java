@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -23,16 +24,22 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @GetMapping("/register")
-    public String join() {
-        // 기본은 forward 형식, 아래의 메소드로 이동하라는 것.
-        return "register_form";
+//    @GetMapping("/register")
+//    public String join() {
+//        // 기본은 forward 형식, 아래의 메소드로 이동하라는 것.
+//        return "register_form";
+//
+//    }
+//
+//    @PostMapping("/register")
+//    public String join(Member memberDto, Model model) throws Exception {
+//        memberService.joinMember(memberDto);
+//        return "redirect:/register_form.html";
+//    }
 
-    }
-
-    @PostMapping("/register")
-    public String join(Member memberDto, Model model) throws Exception {
-        memberService.joinMember(memberDto);
-        return "redirect:/register_form.html";
+    @PostMapping("/signup")
+    public String signUp(@RequestBody Member member) {
+        MemberService.signUp(member);
+        return "회원가입이 완료되었습니다.";
     }
 }
