@@ -7,6 +7,7 @@ import com.daangn.daangn.domain.chat.ChatRoomRepository;
 import com.daangn.daangn.domain.chat.types.ChatType;
 import com.daangn.daangn.service.chat.ChatService;
 
+import com.daangn.daangn.web.chat.dto.ChatRoomEnterDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,15 +27,15 @@ import java.util.List;
 @RequestMapping("/chat")
 public class ChatController {
 
-    private final SimpMessageSendingOperations template;
+    private final SimpMessageSendingOperations sendingOperations;;
 
     @Autowired
     ChatRepository chatRepository;
     @Autowired
     ChatRoomRepository chatRoomRepository;
 
-    @Autowired
-    Member member;
+//    @Autowired
+//    Member member;
 
     // MessageMapping 을 통해 webSocket 로 들어오는 메시지를 발신 처리한다.
     // 이때 클라이언트에서는 /pub/chat/message 로 요청하게 되고 이것을 controller 가 받아서 처리한다.
@@ -47,11 +48,23 @@ public class ChatController {
     }
 
     // 해당 유저
-    @MessageMapping("/chat/sendMessage")
-    public void sendMessage(@Payload Chat chat) {
-        log.info("CHAT {}", chat);
-        chat.builder().content(chat.getContent()).build();
-        template.convertAndSend("/sub/chat/room/" + chat.getRoom(), chat);
+//    @MessageMapping("/chat/sendMessage")
+//    public void sendMessage(@Payload Chat chat) {
+//        log.info("CHAT {}", chat);
+//        chat.builder().content(chat.getContent()).build();
+//        template.convertAndSend("/sub/chat/room/" + chat.getRoom(), chat);
+//    }
+
+    @MessageMapping("/chat/message")
+    public void enter(ChatRoomEnterDto room) {
+        log.debug("hereiam");
+        System.out.println("testsetset");
+        if (room.getType().equals(ChatType.ENTER)) {
+            room.builder().content(room.getContent()+"님이 입장하였습니다");
+
+        }
+
+        sendingOperations.convertAndSend("/topic/chat/room/"+room.getRoomId(),room);
     }
 
     // 유저 퇴장

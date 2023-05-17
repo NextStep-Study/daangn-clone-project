@@ -32,7 +32,7 @@ public class Chat {
     //연관 관계에 있는 Entity 가져오지 않고, getter 로 접근할 때 가져온다 → Lazy 전략
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="chatroom_id")
-    private ChatRoom room; // 방 번호
+    private ChatRoom room; // 방
     private String content; // 내용
 
     @ManyToOne(fetch = FetchType.LAZY)
