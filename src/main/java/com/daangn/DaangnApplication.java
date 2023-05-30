@@ -10,4 +10,7 @@ public class DaangnApplication {
 		SpringApplication.run(DaangnApplication.class, args);
 	}
 
+	public DaangnApplication() {
+
+	}
 }
