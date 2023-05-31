@@ -1,25 +1,37 @@
 package com.daangn.daangn.member.entity;
 
-import javax.persistence.Embeddable;
+import lombok.Builder;
+import lombok.Getter;
+
+import javax.persistence.*;
 
 
-@Embeddable
+@Getter
+@Builder
+@Entity
 public class Address {
 
-
-    private String city; //do, ��
+    @Id
+    @GeneratedValue
+    @Column(name = "address_id")
+    private Long id;
+    private String city;
     private String si;
     private String code;
 
 
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
     protected Address() {
     }
 
-    protected Address(String city, String si, String code) {
+    @Builder
+    public Address(Long id, String city, String si, String code, Member member) {
+        this.id = id;
         this.city = city;
         this.si = si;
         this.code = code;
+        this.member = member;
     }
-
-
 }
