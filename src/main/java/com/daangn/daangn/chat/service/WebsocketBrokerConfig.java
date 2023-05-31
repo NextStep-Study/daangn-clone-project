@@ -25,7 +25,7 @@ public class WebsocketBrokerConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
 
         // stomp 접속 주소 url => /broadcast
-        registry.addEndpoint("/chat/chat")// 연결될 엔드포인트
+        registry.addEndpoint("/ws")// 연결될 엔드포인트
                 .setAllowedOriginPatterns("*")
                 .withSockJS();// SoketJS를 연결한다는 설정
                 // STOMP에서 TCP 연결이 잘 되어있는지 체킹하는 것, HTTP header를 통해 연결 상태를 주기적으로 확인한다.

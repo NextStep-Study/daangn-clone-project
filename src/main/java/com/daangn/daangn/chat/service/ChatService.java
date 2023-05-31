@@ -1,6 +1,10 @@
 package com.daangn.daangn.chat.service;
 
+
+import com.daangn.daangn.chat.dto.SendMessageDto;
+import com.daangn.daangn.chat.entity.Chat;
 import com.daangn.daangn.chat.entity.ChatRoom;
+import com.daangn.daangn.chat.repository.ChatRepository;
 import com.daangn.daangn.chat.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,13 +16,11 @@ import java.util.*;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class ChatService {
-    @Autowired
-    private ChatRoomRepository chatRoomRepository;
 
-    public ChatService(ChatRoomRepository chatRoomRepository) {
-        this.chatRoomRepository = chatRoomRepository;
-    }
+public class ChatService {
+    private final ChatRoomRepository chatRoomRepository;
+
+    private final ChatRepository chatRepository;
 
     //채팅방 불러오기
     public List<ChatRoom> findAllRoom() {
@@ -40,5 +42,16 @@ public class ChatService {
                 build();
         chatRoomRepository.save(chatRoom);
         return chatRoom;
+    }
+
+    public void saveMessage(SendMessageDto messageInfo) {
+
+        Chat chat = Chat.builder()
+                .room(ChatRoom.builder().id(Long.valueOf(messageInfo.getRoomId())).build())
+                .message(messageInfo.getMessage())
+                .sender(messageInfo.getSender()).build();
+
+        log.info("chat {}", chat);
+        chatRepository.save(chat);
     }
 }

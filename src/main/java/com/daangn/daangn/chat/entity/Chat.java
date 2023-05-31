@@ -5,18 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
 @Builder
-@ToString
 @Entity
+@Table(name = "chat")
 @NoArgsConstructor
+@ToString
 public class Chat {
-    // 사용자가 입장, 퇴장 할 때에 대한 메시지와
-    // 사용자 끼리 대화하는 TALK 두 가지로 메시지 타입을 나눈다.
     @Enumerated(EnumType.STRING)
     private ChatType type; // 메세지 타입
 
@@ -25,25 +23,22 @@ public class Chat {
     @Column(name = "chat_id")
     private Long id;
 
-    //연관 관계에 있는 Entity 들 모두 가져온다 → Eager 전략
-    //연관 관계에 있는 Entity 가져오지 않고, getter 로 접근할 때 가져온다 → Lazy 전략
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name ="chatroom_id")
+    @JoinColumn(name = "chatroom_id")
     private ChatRoom room; // 방 정보
+
     private String message; // 내용
     private String sender;
-    private String roomId;
 
-    private LocalDateTime send_time;// 발송시간
+    private LocalDateTime sentAt; // 발송 시간
 
     @Builder
-    public Chat(ChatType type, Long id, ChatRoom room, String message, String sender, String roomId, LocalDateTime send_time) {
+    public Chat(ChatType type, Long id, ChatRoom room, String message, String sender, LocalDateTime sentAt) {
         this.type = type;
         this.id = id;
         this.room = room;
         this.message = message;
         this.sender = sender;
-        this.roomId = roomId;
-        this.send_time = send_time;
+        this.sentAt = sentAt;
     }
 }

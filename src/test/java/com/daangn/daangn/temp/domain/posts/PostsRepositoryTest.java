@@ -1,5 +1,7 @@
 package com.daangn.daangn.temp.domain.posts;
 
+import com.daangn.daangn.post.entity.Posts;
+import com.daangn.daangn.post.repository.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

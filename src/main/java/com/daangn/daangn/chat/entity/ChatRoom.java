@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-
 @Getter
 @ToString
 @Entity
@@ -24,13 +23,12 @@ public class ChatRoom {
     // 방 이름
     private String roomName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "room", cascade = CascadeType.REMOVE)
-    private final Set<Chat> chat = new HashSet<>();
+    @OneToMany(mappedBy = "room", cascade = CascadeType.REMOVE)
+    private final Set<Chat> chats = new HashSet<>();
 
     @Builder
     public ChatRoom(Long id, String roomName) {
-        id = id;
+        this.id = id;
         this.roomName = roomName;
     }
-
 }

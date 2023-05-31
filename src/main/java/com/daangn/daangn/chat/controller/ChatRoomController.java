@@ -1,6 +1,5 @@
 package com.daangn.daangn.chat.controller;
 
-
 import com.daangn.daangn.chat.entity.ChatRoom;
 import com.daangn.daangn.chat.service.ChatService;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
 
 @Controller
 @RequiredArgsConstructor
@@ -35,7 +33,6 @@ public class ChatRoomController {
     @PostMapping("/room")
     @ResponseBody
     public ChatRoom createRoom(@RequestParam String name) {
-        System.out.println(name);
         return chatService.createRoom(name);
     }
     // 채팅방 입장 화면
