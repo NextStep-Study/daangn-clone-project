@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-import static com.daangn.daangn.temp.domain.chat.types.ChatRoomType.CARROT;
+import static com.daangn.daangn.chat.entity.ChatRoomType.CARROT;
 
 public class ChatRoomRepositoryTest {
 
