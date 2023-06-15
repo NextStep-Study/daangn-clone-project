@@ -1,7 +1,7 @@
 package com.daangn.member;
 
+import com.daangn.daangn.member.entity.Member;
 import com.daangn.daangn.member.repository.MemberRepository;
-import com.daangn.daangn.temp.domain.Member.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +36,7 @@ public class MemberTest {
         //when
         //name 받아와서 저장 = saved  -> name = saved를 통해 ID 찾기
         String saved = memberRepository.save(member).getName();
-        Optional<Member> findMember = memberRepository.findById(saved);
+        var findMember = memberRepository.findById(saved);
 
         //then
         //@WebAppConfiguration -> 해야 import
