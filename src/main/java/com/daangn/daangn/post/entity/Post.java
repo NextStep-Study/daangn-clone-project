@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -28,14 +30,42 @@ public class Post {
 
     // 작성자와의 관계 설정
     @ManyToOne(fetch = FetchType.LAZY)
-    private Member author;
+    private Member member;
+
+    // 댓글과의 관계 설정
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Comment> comments = new HashSet<>();
+
+    // 좋아요와의 관계 설정
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Like> likes = new HashSet<>();
 
     // 생성자
-    public Post(String title, String content, Category category, Member author) {
+    public Post(String title, String content, Category category, Member member) {
         this.title = title;
         this.content = content;
         this.category = category;
-        this.author = author;
+        this.member = member;
         this.createdAt = LocalDateTime.now();
+    }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
+        comment.setPost(this);
+    }
+
+    public void removeComment(Comment comment) {
+        comments.remove(comment);
+        comment.setPost(null);
+    }
+
+    public void addLike(Like like) {
+        likes.add(like);
+        like.setPost(this);
+    }
+
+    public void removeLike(Like like) {
+        likes.remove(like);
+        like.setPost(null);
     }
 }
