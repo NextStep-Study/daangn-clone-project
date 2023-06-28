@@ -36,6 +36,6 @@ public class Review {
 
     private String content;
 
-    private int point; //점수
+    private Integer point; //점수
 
 }
