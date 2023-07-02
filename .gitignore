@@ -75,6 +75,7 @@ crashlytics-build.properties
 fabric.properties
 application.properties
 
+
 # Editor-based Rest Client
 .idea/httpRequests
 
@@ -118,3 +119,4 @@ application.properties
 ### Java ###
 # Compiled class file
 *.class
+
