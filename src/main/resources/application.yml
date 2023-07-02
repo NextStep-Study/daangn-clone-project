@@ -4,13 +4,15 @@ spring:
     username: sa
     passward:
     driver-class-name: org.h2.Driver
+
   jpa:
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-        #        show_sql: true
+#        show_sql: true
         format_sql: true
-  web:
-    resources:
-      static-locations: classpath:/static/
+
+logging:
+  level:
+    org.hibernate.SQL: debug

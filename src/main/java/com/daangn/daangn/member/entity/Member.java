@@ -20,6 +20,8 @@ password [회원 가입 시 설정, 로그인 시 권한 부여 여부를 결정
 영어(대소문자), 숫자, 특수 문자 조합-> 정규식
  */
 
+import com.daangn.daangn.post.entity.Like;
+import com.daangn.daangn.post.entity.Post;
 import com.daangn.daangn.product.entity.Product;
 import lombok.Getter;
 import lombok.Setter;
@@ -64,5 +66,13 @@ public class Member {
 
     @OneToMany(mappedBy = "seller")
     List<Product> uploadedProducts = new ArrayList<>();
+
+    // 게시글과의 관계 설정
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Post> posts = new ArrayList<>();
+
+    // 좋아요와의 관계 설정
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Like> likes = new ArrayList<>();
 
 }
