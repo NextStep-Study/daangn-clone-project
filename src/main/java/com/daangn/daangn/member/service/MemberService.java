@@ -29,9 +29,12 @@ public class MemberService {
 
     public Member joinMember(Member member) throws Exception {
         // encoder를 통하여 비밀번호를 암호화 시켜준다.
-
-        member.builder().pwd(encoder.encode(member.getPwd())).build();
-        return memberRepository.save(member);
+        Member joinMember = Member.builder()
+                .name(member.getName())
+                .pwd(encoder.encode(member.getPwd()))
+                .email(member.getEmail())
+                .addresses(member.getAddresses()).build();
+        return memberRepository.save(joinMember);
 
     }
 

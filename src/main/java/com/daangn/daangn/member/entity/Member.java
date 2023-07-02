@@ -23,6 +23,8 @@ password [회원 가입 시 설정, 로그인 시 권한 부여 여부를 결정
 import com.daangn.daangn.product.entity.Product;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -31,6 +33,9 @@ import java.util.List;
 @Getter
 @Table(name = "member")
 @Entity
+@ToString
+@NoArgsConstructor
+
 public class Member {
 
     private String name;
@@ -61,7 +66,7 @@ public class Member {
     */
 
     @Builder
-    public Member(String name, String birth, String phone_num, Long id, String email, String pwd, int reg_num, int reg_date, List<Address> addresses, List<Product> uploadedProducts) {
+    public Member(String name, String birth, String phone_num, Long id, String email, String pwd, int reg_num, int reg_date, List<Address> addresses) {
         this.name = name;
         this.birth = birth;
         this.phone_num = phone_num;
@@ -71,7 +76,6 @@ public class Member {
         this.reg_num = reg_num;
         this.reg_date = reg_date;
         this.addresses = addresses;
-//        this.uploadedProducts = uploadedProducts;
     }
 //
 //    @OneToMany(mappedBy = "seller")
