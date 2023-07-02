@@ -23,17 +23,14 @@ password [회원 가입 시 설정, 로그인 시 권한 부여 여부를 결정
 import com.daangn.daangn.post.entity.Like;
 import com.daangn.daangn.post.entity.Post;
 import com.daangn.daangn.product.entity.Product;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@Setter
-@ToString
 @Table(name = "member")
 @Entity
 public class Member {
@@ -55,7 +52,8 @@ public class Member {
 
     private int reg_date;
 
-    private Address address;
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Address> addresses = new ArrayList<>();
 
     /*
  	위에 처럼 Adress 클래스를 따로 뺄까 아니면 아래 처럼 한번에 선언할지 ,,
@@ -64,8 +62,22 @@ public class Member {
  	private String zipcode;
     */
 
-    @OneToMany(mappedBy = "seller")
-    List<Product> uploadedProducts = new ArrayList<>();
+    @Builder
+    public Member(String name, String birth, String phone_num, Long id, String email, String pwd, int reg_num, int reg_date, List<Address> addresses, List<Product> uploadedProducts) {
+        this.name = name;
+        this.birth = birth;
+        this.phone_num = phone_num;
+        this.id = id;
+        this.email = email;
+        this.pwd = pwd;
+        this.reg_num = reg_num;
+        this.reg_date = reg_date;
+        this.addresses = addresses;
+//        this.uploadedProducts = uploadedProducts;
+    }
+//
+//    @OneToMany(mappedBy = "seller")
+//    List<Product> uploadedProducts = new ArrayList<>();
 
     // 게시글과의 관계 설정
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
