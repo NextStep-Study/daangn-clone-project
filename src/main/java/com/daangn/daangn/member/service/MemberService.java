@@ -32,8 +32,9 @@ public class MemberService {
         Member joinMember = Member.builder()
                 .name(member.getName())
                 .pwd(encoder.encode(member.getPwd()))
-                .email(member.getEmail())
-                .addresses(member.getAddresses()).build();
+                .email(member.getEmail()).build();
+
+//                .adress(member.getAdresss()).build();
         return memberRepository.save(joinMember);
 
     }

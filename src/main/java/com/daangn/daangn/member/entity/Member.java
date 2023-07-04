@@ -36,11 +36,12 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 
-public class Member {
+public class Member extends BaseTimeEntity {
 
     private String name;
     private String birth;
     private String phone_num;
+
 
     @Id
     @GeneratedValue
@@ -55,8 +56,15 @@ public class Member {
 
     private int reg_date;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    private List<Address> addresses = new ArrayList<>();
+    private String picture;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+
+//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+//    private List<Address> adress = new ArrayList<>();
 
     /*
  	위에 처럼 Adress 클래스를 따로 뺄까 아니면 아래 처럼 한번에 선언할지 ,,
@@ -66,7 +74,8 @@ public class Member {
     */
 
     @Builder
-    public Member(String name, String birth, String phone_num, Long id, String email, String pwd, int reg_num, int reg_date, List<Address> addresses) {
+    public Member(String name, String birth, String phone_num, Long id, String email, String pwd, int reg_num, int reg_date,
+                  String picture, Role role) {
         this.name = name;
         this.birth = birth;
         this.phone_num = phone_num;
@@ -75,10 +84,23 @@ public class Member {
         this.pwd = pwd;
         this.reg_num = reg_num;
         this.reg_date = reg_date;
-        this.addresses = addresses;
+//        this.adress=adress;
+        this.picture=picture;
+        this.role=role;
     }
 //
 //    @OneToMany(mappedBy = "seller")
 //    List<Product> uploadedProducts = new ArrayList<>();
+
+    public Member update(String name, String picture){
+        this.name=name;
+        this.picture=picture;
+
+        return this;
+    }
+
+    public String getRoleKey(){
+        return this.role.getKey();
+    }
 
 }

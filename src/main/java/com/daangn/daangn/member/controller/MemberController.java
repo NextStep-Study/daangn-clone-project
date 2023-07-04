@@ -80,8 +80,6 @@ public class MemberController {
         return null;
     }
 
-
-
     @PutMapping(value ="/")
     public ResponseEntity<?> modifyMemberInfo(@RequestBody LoginMemberDTO memberDTO) {
         return null;
